@@ -90,28 +90,34 @@ try `182` or `365` for a longer heatmap — the card grows taller automatically)
 ## 4. Project spotlight card
 
 A third endpoint spotlights one project — title, tagline, tech pills, status badge.
-Unlike the other two, this one isn't pulled from the GitHub API: you pass the
-details yourself as query params, since "best project" is a curated call, not a
-scraped stat.
+You can either pass details manually (`?name=...`) or auto-fetch from a GitHub repo
+(`?repo=owner/name`). Manual params override fetched data, so you can mix and match.
 
+**Auto-fetch from a repo:**
+```
+https://YOUR-PROJECT.vercel.app/api/project?repo=naol-ayele/birrly&theme=nova
+```
+
+```md
+[![Birrly](https://YOUR-PROJECT.vercel.app/api/project?repo=naol-ayele/birrly&theme=nova)](https://github.com/naol-ayele/birrly)
+```
+
+**Manual (full control):**
 ```
 https://YOUR-PROJECT.vercel.app/api/project?name=Birrly&tagline=Offline-first+finance+app+with+Ethiopian+Calendar+support&status=in+development&tech=Flutter,Provider,SQLite,Supabase&link=github.com/you/birrly&theme=nova
 ```
 
 ```md
-### Featured projects
-
 ![Birrly](https://YOUR-PROJECT.vercel.app/api/project?name=Birrly&tagline=Offline-first+finance+app+with+Ethiopian+Calendar+support&status=in+development&tech=Flutter,Provider,SQLite,Supabase&link=github.com/you/birrly&theme=nova)
-
-![Qommo](https://YOUR-PROJECT.vercel.app/api/project?name=Qommo&tagline=Family+tree+web+app+with+graph-based+relationship+modeling&status=active&tech=React,Neo4j,PostgreSQL,Node.js&link=github.com/you/qommo&theme=matrix)
 ```
 
 | Param | Notes |
 |---|---|
-| `name` | required |
+| `repo` | `owner/name` — auto-fetches name, description, languages, stars, forks from GitHub API. Manual params override. If stars > 0 and no `stat` given, auto-generates "★ N stars · M forks" |
+| `name` | required if `repo` not given |
 | `tagline` | one line, keep it short — long taglines wrap the card taller |
 | `status` | small badge top-right, e.g. `active`, `in+development`, `archived` |
-| `stat` | one bold line for a standout metric, e.g. `Realtime+sync+%C2%B7+SMS+auto-detection` |
+| `stat` | one bold line for a standout metric, e.g. `Realtime+sync+%C2%B7+SMS+auto-detection`. Auto-generated when using `?repo=` with stars > 0 |
 | `tech` | comma-separated, no spaces around commas needed |
 | `link` | plain text, not a real hyperlink (SVG `<img>` embeds can't be clickable — wrap it in a markdown link, see below) |
 | `theme` / `animate` | same as the other cards |
@@ -197,9 +203,9 @@ github-readme-stats, not an official GitHub metric.
 
 ## Notes / limitations
 
-- Language breakdown is weighted by **repo count**, not byte count (keeps it to
-  one REST call instead of fetching languages for every repo — fine for a
-  README card, not meant to be exact).
+- Language breakdown uses **byte count** when `GITHUB_TOKEN` is set (fetches top 30
+  repos' languages in batches of 10 for accuracy). Falls back to **repo count** when
+  no token is available (single REST call, no extra requests).
 - Current streak counts a trailing run of contribution-days ending today or
   yesterday; longest streak scans the full contribution calendar (last ~12 months).
 - GitHub caches embedded images aggressively — if you update your stats and the

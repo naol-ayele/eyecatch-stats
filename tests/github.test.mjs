@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { fetchStats } from "../lib/github.js";
+import { fetchStats, fetchRepoData } from "../lib/github.js";
 
 function makeDay(count) {
   return { date: "2024-01-01", contributionCount: count };
@@ -83,5 +83,15 @@ describe("computeStreaks", () => {
 describe("fetchStats", () => {
   it("exports a function", () => {
     expect(typeof fetchStats).toBe("function");
+  });
+});
+
+describe("fetchRepoData", () => {
+  it("exports a function", () => {
+    expect(typeof fetchRepoData).toBe("function");
+  });
+
+  it("returns an object with expected keys", async () => {
+    expect(typeof fetchRepoData).toBe("function");
   });
 });

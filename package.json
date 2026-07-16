@@ -5,6 +5,7 @@
   "main": "api/stats.js",
   "scripts": {
     "dev": "vercel dev",
+    "dev:node": "node dev-server.js",
     "test": "vitest run"
   },
   "dependencies": {},
