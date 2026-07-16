@@ -1,0 +1,52 @@
+<svg width="495" height="195" viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vanta's GitHub stats">
+<title>Vanta's GitHub stats</title>
+<style>
+@keyframes glowPulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+@keyframes ringDraw { from{stroke-dashoffset:326.7256359733385} to{stroke-dashoffset:68.61238355440108} }
+@keyframes floatBlob { 0%,100%{transform:translate(0,0)} 50%{transform:translate(8px,-6px)} }
+.glow{animation:glowPulse 2.6s ease-in-out infinite}
+.ring{animation:ringDraw 1.6s cubic-bezier(.3,.9,.4,1) forwards}
+.blob{animation:floatBlob 6s ease-in-out infinite}
+</style>
+<defs>
+<linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#2a1210"/>
+<stop offset="55%" stop-color="#3a1a1e"/>
+<stop offset="100%" stop-color="#241028"/>
+</linearGradient>
+<linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#f0997b"/>
+<stop offset="100%" stop-color="#ed93b1"/>
+</linearGradient>
+<radialGradient id="blobGrad"><stop offset="0%" stop-color="#f0997b" stop-opacity="0.35"/><stop offset="100%" stop-color="#f0997b" stop-opacity="0"/></radialGradient>
+<filter id="softGlow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="0" y="0" width="495" height="195" rx="14" fill="url(#bgGrad)"/>
+<circle class="blob" cx="90" cy="40" r="60" fill="url(#blobGrad)"/>
+<circle class="blob" style="animation-delay:-3s" cx="430" cy="160" r="70" fill="url(#blobGrad)"/>
+<text x="24" y="34" font-size="16" font-weight="500" fill="#fff1ec" font-family="sans-serif">Vanta&#8217;s github stats</text>
+<text x="24" y="52" font-size="11" fill="#c9938a" font-family="sans-serif">@vanta-dev</text>
+<g font-family="sans-serif">
+    <circle class="glow" style="animation-delay:-0.0s" cx="30" cy="80" r="4" fill="#f0997b"/>
+    <text x="42" y="84" font-size="13" fill="#f0d9d3">total commits</text>
+    <text x="220" y="84" font-size="13" fill="#ffffff" text-anchor="end" font-weight="500">1,842</text>
+    <circle class="glow" style="animation-delay:-0.6s" cx="30" cy="106" r="4" fill="#ed93b1"/>
+    <text x="42" y="110" font-size="13" fill="#f0d9d3">stars earned</text>
+    <text x="220" y="110" font-size="13" fill="#ffffff" text-anchor="end" font-weight="500">96</text>
+    <circle class="glow" style="animation-delay:-1.2s" cx="30" cy="132" r="4" fill="#faC775"/>
+    <text x="42" y="136" font-size="13" fill="#f0d9d3">pull requests</text>
+    <text x="220" y="136" font-size="13" fill="#ffffff" text-anchor="end" font-weight="500">73</text>
+    <circle class="glow" style="animation-delay:-1.8s" cx="30" cy="158" r="4" fill="#d4537e"/>
+    <text x="42" y="162" font-size="13" fill="#f0d9d3">current streak</text>
+    <text x="220" y="162" font-size="13" fill="#ffffff" text-anchor="end" font-weight="500">27 days</text>
+</g>
+<g transform="translate(360,95)" filter="url(#softGlow)">
+<circle r="52" fill="none" stroke="#2a2645" stroke-width="10"/>
+<circle class="ring" r="52" fill="none" stroke="url(#ringGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90)"/>
+<text text-anchor="middle" y="-4" font-size="22" font-weight="500" fill="#ffffff" font-family="sans-serif">79%</text>
+<text text-anchor="middle" y="16" font-size="10" fill="#c9938a" font-family="sans-serif">grade</text>
+</g>
+<text x="24" y="180" font-size="10" fill="#c9938a" font-family="sans-serif">Dart 61%   TypeScript 22%   Python 12%   Other 5%</text>
+<rect x="24" y="185" width="447" height="5" rx="2.5" fill="#2a2645"/>
+<rect x="24.0" y="185" width="272.7" height="5" fill="#f0997b"/><rect x="296.7" y="185" width="98.3" height="5" fill="#ed93b1"/><rect x="395.0" y="185" width="53.6" height="5" fill="#d4537e"/><rect x="448.6" y="185" width="22.4" height="5" fill="#faC775"/>
+</svg>

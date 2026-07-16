@@ -1,0 +1,17 @@
+{
+  "name": "eyecatch-stats",
+  "version": "1.0.0",
+  "description": "Eye-catching animated GitHub stats card, deployable to Vercel",
+  "main": "api/stats.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

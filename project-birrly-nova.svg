@@ -1,0 +1,37 @@
+<svg width="495" height="166" viewBox="0 0 495 166" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Birrly project spotlight">
+<title>Birrly project spotlight</title>
+<style>
+@keyframes barGlow { 0%,100%{opacity:.7} 50%{opacity:1} }
+@keyframes arrowNudge { 0%,100%{transform:translateX(0)} 50%{transform:translateX(3px)} }
+.barGlow{animation:barGlow 2.4s ease-in-out infinite}
+.arrowNudge{animation:arrowNudge 1.6s ease-in-out infinite}
+</style>
+<defs>
+<linearGradient id="pbgGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#12121f"/>
+<stop offset="55%" stop-color="#1a1030"/>
+<stop offset="100%" stop-color="#0d1f2e"/>
+</linearGradient>
+<linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#7f77dd"/>
+<stop offset="100%" stop-color="#5dcaa5"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="495" height="166" rx="14" fill="url(#pbgGrad)"/>
+<rect x="0" y="0" width="5" height="166" rx="2.5" fill="url(#barGrad)" class="barGlow"/>
+
+<rect x="357.7" y="24" width="113.3" height="22" rx="11" fill="#28204a"/>
+<text x="414.3" y="39" font-size="11" fill="#b6aefc" text-anchor="middle" font-family="sans-serif">in development</text>
+
+<text x="24" y="42" font-size="20" font-weight="500" fill="#f2f0ff" font-family="sans-serif">Birrly</text>
+<text x="24" y="66" font-size="13" fill="#a49fcf" font-family="sans-serif">Offline-first personal finance app with Ethiopian Calendar support</text>
+
+<text x="24" y="94" font-size="13" fill="#f2f0ff" font-family="sans-serif" font-weight="500">Realtime Supabase sync · SMS auto-detection roadmap</text>
+
+<rect x="24.0" y="118.0" width="72.7" height="24" rx="12" fill="#241c3f"/><text x="60.4" y="134.0" font-size="12" fill="#c9c4f0" text-anchor="middle" font-family="sans-serif">Flutter</text>
+<rect x="104.7" y="118.0" width="79.7" height="24" rx="12" fill="#241c3f"/><text x="144.6" y="134.0" font-size="12" fill="#c9c4f0" text-anchor="middle" font-family="sans-serif">Provider</text>
+<rect x="192.4" y="118.0" width="65.8" height="24" rx="12" fill="#241c3f"/><text x="225.3" y="134.0" font-size="12" fill="#c9c4f0" text-anchor="middle" font-family="sans-serif">SQLite</text>
+<rect x="266.2" y="118.0" width="79.7" height="24" rx="12" fill="#241c3f"/><text x="306.0" y="134.0" font-size="12" fill="#c9c4f0" text-anchor="middle" font-family="sans-serif">Supabase</text>
+
+<text x="471.0" y="148" font-size="11" fill="#a49fcf" text-anchor="end" font-family="sans-serif" class="arrowNudge">github.com/vanta/birrly &#8594;</text>
+</svg>
